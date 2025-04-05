@@ -13,7 +13,6 @@
 * {
   justify-content: center;
 }
-
 body {
   background-image: url('books.jpg');
   background-size: 300px 600px;
@@ -21,18 +20,17 @@ body {
   background-color: #927c60;
   background-repeat: repeat;
   background-attachment: fixed;
-
 }
 
 h1 {
   color: #f2e5d8;
   text-shadow: 2px 2px 4px #391d08;
   font-family: 'raleway', serif;
-  font-weight: 550;
+  font-weight: 600;
   font-size: 2.7em;
   margin: 20px 0;
+  background-color: #231709;
 }
-
 h1:after, h1:before {
   content: " ";
   display: block;
@@ -44,17 +42,18 @@ h1:after, h1:before {
 h3 {
   color: #f2e5d8;
   text-shadow: 2px 2px 4px #391d08;
-  font-family: 'raleway', sans-serif;
+  font-family: 'raleway', serif;
   font-weight: 400;
   font-size: 1.4em;
   word-spacing: 1px;
   border: 2px solid #9a7b4f;
+  background-color: #231709;
 }
 h3:after, h3:before {
   content: " ";
   display: block;
   border-bottom: 1px solid #9a7b4f;
-  border-top: 1px solid #3f301d;
+  border-top: 1px solid #9a7b4f;
   height: 5px;
 background-color: #231709;
 }
