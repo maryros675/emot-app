@@ -1,39 +1,85 @@
 .App {
-  font-family: sans-serif;
+  font-family: 'Georgia', sans-serif;
   text-align: center;
-  background-image: url('books.jpg');
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px;
+  box-sizing: border-box;
+  
+}
+* {
+  justify-content: center;
 }
 
 body {
-  background-color: #846140;
-  color: white;
-  margin: 0;
-  padding: 20px;
+  background-image: url('books.jpg');
+  background-size: 300px 600px;
+  background-position: center;
+  background-color: #d2bca0;
+  background-repeat: repeat;
+  background-attachment: fixed;
+
 }
 
 h1 {
-  color: #fafafa;
-  text-shadow: 2px 2px 4px #000000;
-  font-size: 2.5em;
+  color: #f2e5d8;
+  text-shadow: 2px 2px 4px #391d08;
+  font-family: 'raleway', serif;
+  font-weight: 550;
+  font-size: 2.7em;
   margin: 20px 0;
 }
 
+h1:after, h1:before {
+  content: " ";
+  display: block;
+  border-bottom: 2px solid #d2bca0;
+  border-top: 2px solid #d2bca0;
+  height: 5px;
+}
 
+h3 {
+  color: #f2e5d8;
+  text-shadow: 2px 2px 4px #391d08;
+  font-family: 'raleway', sans-serif;
+  font-weight: 400;
+  font-size: 1.4em;
+  word-spacing: 1px;
+  border: 2px solid #9a7b4f;
+}
+h3:after, h3:before {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid #9a7b4f;
+  border-top: 1px solid #3f301d;
+  height: 5px;
+background-color: #231709;
+}
 
 .emotions {
   margin-bottom: 20px;
+  font-size: 1.1em;
 }
 
 .emotions button {
   margin: 5px;
   padding: 10px 15px;
   cursor: pointer;
-  border: 1px solid #d0cece;
+  border: 1px solid #d2bca0;
   border-radius: 5px;
+  background-color: #231709;
+}
+
+.emotions button:hover {
+  background-color: #d2bca0;
+  color: black;
 }
 
 .emotions button.selected {
-  background-color: #007bff;
+  background-color: #d2bca0; 
   color: white;
 }
 
@@ -46,11 +92,11 @@ h1 {
 .book {
   margin: 10px;
   padding: 10px;
-  border: 1px solid #eee;
+  border: 1px solid #d2bca0;
   border-radius: 5px;
   width: 200px;
   text-align: center;
-  background-color: black;
+  background-color: #170f06;
 
 }
 
@@ -67,11 +113,14 @@ h1 {
 .search-container input {
   padding: 8px;
   margin-right: 10px;
+  background-color: #231709;
+
 }
 
 .search-container button {
   padding: 8px 15px;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid #d2bca0;
   border-radius: 5px;
+  background-color: #231709;
 }

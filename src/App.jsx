@@ -46,7 +46,8 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <h1>Book Suggestions</h1>
+      <h1>EmotiReads</h1>
+      <h3>Find a book based on your mood!</h3>
       <div className="emotions">
         {emotions.map((e) => (
           <button
