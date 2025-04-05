@@ -1,0 +1,77 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-image: url('books.jpg');
+}
+
+body {
+  background-color: #846140;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #fafafa;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 2.5em;
+  margin: 20px 0;
+}
+
+
+
+.emotions {
+  margin-bottom: 20px;
+}
+
+.emotions button {
+  margin: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: 1px solid #d0cece;
+  border-radius: 5px;
+}
+
+.emotions button.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+  background-color: black;
+
+}
+
+.book img {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.search-container button {
+  padding: 8px 15px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
