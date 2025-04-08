@@ -11,14 +11,15 @@
   
 }
 * {
-  justify-content: center;
+  justify-content: center; /* Align items to the center */
 }
-body {
+body { 
+  /* copyrighted image */
   background-image: url('https://images.unsplash.com/photo-1617653815872-905656341348?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx2aXN1YWwtc2VhcmNofDEwNHx8fGVufDB8fHx8fA%3D%3D');
   background-size: 300px 600px;
   background-position: center;
   background-color: #927c60;
-  background-repeat: repeat;
+  background-repeat: repeat; /* Repeat the image */
   background-attachment: fixed;
 }
 

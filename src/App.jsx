@@ -1,62 +1,65 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-function App() {
-  const [emotion, setEmotion] = useState('');
-  const [books, setBooks] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const emotions = ['happy', 'sad', 'angry', 'relaxed', 'motivated'];
-  const usedBookKeys = new Set(); // To track used book keys
+// The code is a React application that allows users to find books based on their emotions or search terms.
+// It fetches book data from the Open Library API and displays the results in a user-friendly interface.
 
-useEffect(() => {
-    const fetchBooks = async (query) => {
+function App() {
+  const [emotion, setEmotion] = useState(''); 
+  const [books, setBooks] = useState([]); 
+  const [searchTerm, setSearchTerm] = useState(''); 
+  const emotions = ['happy', 'sad', 'angry', 'relaxed', 'motivated']; 
+  const usedBookKeys = new Set(); 
+
+useEffect(() => { 
+    const fetchBooks = async (query) => { 
       try {
         const response = await fetch(
           `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=10`
         );
-        const data = await response.json();
+        const data = await response.json(); 
         const filteredBooks = data.docs.filter((book) => {
-          // Filter out books that have already been used
-          if (usedBookKeys.has(book.key)) return false;
-          usedBookKeys.add(book.key);
+          
+          if (usedBookKeys.has(book.key)) return false; 
+          usedBookKeys.add(book.key); 
           return true;
         });
-        setBooks(filteredBooks);
-      } catch (error) {
+        setBooks(filteredBooks); 
+      } catch (error) { 
         console.error('Error fetching books:', error);
       }
     }
-    if (emotion) {
+    if (emotion) { 
       fetchBooks(emotion);
-    }
-    else if (searchTerm) {
+    } 
+    else if (searchTerm) { 
         fetchBooks(searchTerm);
-        setEmotion(' '); // Clear emotion if search
+        setEmotion(' '); 
       }
-  }, [emotion, searchTerm]);
-// Function to fetch books based on the selected emotion
+  }, [emotion, searchTerm]); 
+
   const handleEmotionClick = (selectedEmotion) => { 
-    setEmotion(selectedEmotion);
-    setSearchTerm (''); //clear search when emotion is selected
+    setEmotion(selectedEmotion); 
+    setSearchTerm (''); 
   };
   const handleSearch = () => {
-    if (searchTerm){
-      setEmotion('')//clear emotion button when searching
+    if (searchTerm){ 
+      setEmotion('')
     }
   };
 
-  return (
-    <div className="App">
-      <h1>EmotiReads</h1>
+  return ( 
+    <div className="App"> 
+      <h1>EmotiReads</h1> 
       <h3>Find a book based on your mood!</h3>
       <div className="emotions">
-        {emotions.map((e) => (
+        {emotions.map((e) => ( 
           <button
-            key={e}
-            onClick={() => handleEmotionClick(e)}
-            className={emotion === e ? 'selected' : ''}
+            key={e} 
+            onClick={() => handleEmotionClick(e)} 
+            className={emotion === e ? 'selected' : ''}  
           >
-            {e}
+            {e} 
           </button>
         ))}
       </div>
@@ -64,11 +67,11 @@ useEffect(() => {
         <div className="search-container">
           <input
             type="text"
-            placeholder="Search Book"
+            placeholder="Search Book" 
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => setSearchTerm(e.target.value)} 
           />
-          <button onClick={handleSearch}>Search</button>
+          <button onClick={handleSearch}>Search</button> 
         </div>
       )}
       <div className="books">
